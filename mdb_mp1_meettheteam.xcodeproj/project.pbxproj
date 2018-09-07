@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B750EAD421428820005D923B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EAD321428820005D923B /* AppDelegate.swift */; };
-		B750EAD621428820005D923B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EAD521428820005D923B /* ViewController.swift */; };
+		B750EAD621428820005D923B /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EAD521428820005D923B /* StartScreenController.swift */; };
 		B750EAD921428820005D923B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B750EAD721428820005D923B /* Main.storyboard */; };
 		B750EADB21428822005D923B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B750EADA21428822005D923B /* Assets.xcassets */; };
 		B750EADE21428822005D923B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B750EADC21428822005D923B /* LaunchScreen.storyboard */; };
 		B750EAE921428822005D923B /* mdb_mp1_meettheteamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EAE821428822005D923B /* mdb_mp1_meettheteamTests.swift */; };
 		B750EAF421428822005D923B /* mdb_mp1_meettheteamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EAF321428822005D923B /* mdb_mp1_meettheteamUITests.swift */; };
 		B750EB0221428DDB005D923B /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB0121428DDB005D923B /* constants.swift */; };
+		B750EB082142916F005D923B /* StartScreenController-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB072142916F005D923B /* StartScreenController-initUI.swift */; };
+		B750EB0A2142E679005D923B /* GameScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB092142E679005D923B /* GameScreenController.swift */; };
+		B750EB0D2142E7C2005D923B /* GameScreenController-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB0C2142E7C2005D923B /* GameScreenController-initUI.swift */; };
+		B750EB0F214313D5005D923B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB0E214313D5005D923B /* StatsViewController.swift */; };
+		B750EB1221431699005D923B /* StatsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1121431699005D923B /* StatsTracker.swift */; };
+		B750EB14214316A9005D923B /* RoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB13214316A9005D923B /* RoundGenerator.swift */; };
+		B750EB1B21432418005D923B /* GameScreenController-gamelogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +44,7 @@
 /* Begin PBXFileReference section */
 		B750EAD021428820005D923B /* mdb_mp1_meettheteam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdb_mp1_meettheteam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B750EAD321428820005D923B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B750EAD521428820005D923B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B750EAD521428820005D923B /* StartScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		B750EAD821428820005D923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B750EADA21428822005D923B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B750EADD21428822005D923B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,13 @@
 		B750EAF321428822005D923B /* mdb_mp1_meettheteamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mdb_mp1_meettheteamUITests.swift; sourceTree = "<group>"; };
 		B750EAF521428822005D923B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B750EB0121428DDB005D923B /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		B750EB072142916F005D923B /* StartScreenController-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartScreenController-initUI.swift"; sourceTree = "<group>"; };
+		B750EB092142E679005D923B /* GameScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenController.swift; sourceTree = "<group>"; };
+		B750EB0C2142E7C2005D923B /* GameScreenController-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenController-initUI.swift"; sourceTree = "<group>"; };
+		B750EB0E214313D5005D923B /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		B750EB1121431699005D923B /* StatsTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTracker.swift; sourceTree = "<group>"; };
+		B750EB13214316A9005D923B /* RoundGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundGenerator.swift; sourceTree = "<group>"; };
+		B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenController-gamelogic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				B750EAD321428820005D923B /* AppDelegate.swift */,
-				B750EAD521428820005D923B /* ViewController.swift */,
-				B750EB0121428DDB005D923B /* constants.swift */,
+				B750EB16214316CF005D923B /* Models */,
+				B750EB0521429101005D923B /* Controllers */,
+				B750EB04214290F6005D923B /* Resources */,
 				B750EAD721428820005D923B /* Main.storyboard */,
 				B750EADA21428822005D923B /* Assets.xcassets */,
 				B750EADC21428822005D923B /* LaunchScreen.storyboard */,
@@ -126,6 +141,60 @@
 				B750EAF521428822005D923B /* Info.plist */,
 			);
 			path = mdb_mp1_meettheteamUITests;
+			sourceTree = "<group>";
+		};
+		B750EB04214290F6005D923B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB0121428DDB005D923B /* constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B750EB0521429101005D923B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB17214316E2005D923B /* GameScreenController */,
+				B750EB18214316EB005D923B /* StartScreenController */,
+				B750EB1921431746005D923B /* StatsViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B750EB16214316CF005D923B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB1121431699005D923B /* StatsTracker.swift */,
+				B750EB13214316A9005D923B /* RoundGenerator.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B750EB17214316E2005D923B /* GameScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB092142E679005D923B /* GameScreenController.swift */,
+				B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */,
+				B750EB0C2142E7C2005D923B /* GameScreenController-initUI.swift */,
+			);
+			path = GameScreenController;
+			sourceTree = "<group>";
+		};
+		B750EB18214316EB005D923B /* StartScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				B750EAD521428820005D923B /* StartScreenController.swift */,
+				B750EB072142916F005D923B /* StartScreenController-initUI.swift */,
+			);
+			path = StartScreenController;
+			sourceTree = "<group>";
+		};
+		B750EB1921431746005D923B /* StatsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB0E214313D5005D923B /* StatsViewController.swift */,
+			);
+			path = StatsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B750EAD621428820005D923B /* ViewController.swift in Sources */,
+				B750EB1221431699005D923B /* StatsTracker.swift in Sources */,
+				B750EAD621428820005D923B /* StartScreenController.swift in Sources */,
+				B750EB14214316A9005D923B /* RoundGenerator.swift in Sources */,
 				B750EAD421428820005D923B /* AppDelegate.swift in Sources */,
+				B750EB0A2142E679005D923B /* GameScreenController.swift in Sources */,
+				B750EB0D2142E7C2005D923B /* GameScreenController-initUI.swift in Sources */,
+				B750EB1B21432418005D923B /* GameScreenController-gamelogic.swift in Sources */,
+				B750EB0F214313D5005D923B /* StatsViewController.swift in Sources */,
+				B750EB082142916F005D923B /* StartScreenController-initUI.swift in Sources */,
 				B750EB0221428DDB005D923B /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
