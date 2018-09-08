@@ -44,7 +44,7 @@ extension StatsViewController {
         resetStats.titleLabel?.font = UIFont(name: "Gentona-Bold", size: 24)
         resetStats.setTitleColor(StyleColors.RED, for: .normal)
         resetStats.backgroundColor = .white
-        resetStats.layer.cornerRadius = 20
+        resetStats.layer.cornerRadius = 10
         view.addSubview(resetStats)
     }
     

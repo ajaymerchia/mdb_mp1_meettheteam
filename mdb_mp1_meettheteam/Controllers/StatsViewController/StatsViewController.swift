@@ -47,7 +47,8 @@ class StatsViewController: UIViewController {
         let parent = self.navigationController?.viewControllers[1] as! GameScreenController
         parent.stats = StatsTracker.STATS()
         parent.inboundReset = true
-        return_to_target()
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
 
 }

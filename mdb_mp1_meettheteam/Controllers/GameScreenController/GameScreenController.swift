@@ -22,7 +22,6 @@ class GameScreenController: UIViewController {
     var scoreValue: UILabel!
     
     var stats: StatsTracker.STATS!
-    var inboundReset = false
     var preload_value: Int!
     
     var imageFrame: UIImageView!
@@ -87,12 +86,7 @@ class GameScreenController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if inboundReset {
-            inboundReset = false
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            updateScore()
-        }
+        updateScore()
     }
     
     
