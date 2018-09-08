@@ -5,12 +5,15 @@ This is my first iOS application. It displays the members of MDB for Fall 2018 a
 
 ## Screenshots
 Welcome to Meet the Members.
+<br>
 <img src="screenshots/home.png" width="200">
 
 Identify members of MBD.
+<br>
 <img src="screenshots/gameplay.png" width="200">
 
 Track statistics!
+<br>
 <img src="screenshots/stats.png" width="200">
 
 
