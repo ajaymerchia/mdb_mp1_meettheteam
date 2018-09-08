@@ -28,6 +28,7 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Defaults.addBackgroundImage(given_view: self.view)
         init_labels()
         init_buttons()
         create_question_history()
@@ -43,8 +44,9 @@ class StatsViewController: UIViewController {
     }
     
     @objc func reset() {
-        var parent = self.navigationController?.viewControllers[1] as! GameScreenController
+        let parent = self.navigationController?.viewControllers[1] as! GameScreenController
         parent.stats = StatsTracker.STATS()
+        parent.inboundReset = true
         return_to_target()
     }
 

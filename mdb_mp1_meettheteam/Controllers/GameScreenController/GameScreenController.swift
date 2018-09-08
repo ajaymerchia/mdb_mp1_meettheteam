@@ -22,8 +22,10 @@ class GameScreenController: UIViewController {
     var scoreValue: UILabel!
     
     var stats: StatsTracker.STATS!
+    var inboundReset = false
     var preload_value: Int!
     
+    var imageFrame: UIImageView!
     var promptImage: UIImageView!
     var promptText: UILabel!
     
@@ -35,18 +37,21 @@ class GameScreenController: UIViewController {
     var curr_state = GAME_STATE.RUNNING
     var accepting_input:Bool = true
     var gameTimer: Timer!
+    var next_round_timer:Timer!
     var time_left_in_round: Double = 5.0
     let TIMER_PRECISION = 0.01
     
     var curr_round: RoundGenerator!
     
-    let SAD_EMOJIS = ["💥","😢","🤯","❌"]
+    let SAD_EMOJIS = ["💥","😢","🤯","❌", "💩"]
+    let HAPPY_EMOJIS = ["😀","👏","⭐️","❤️","✅"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        Defaults.addBackgroundImage(given_view: self.view)
         //Initialize UI Components & Connect Segues
         init_buttons()
         init_text()
@@ -82,7 +87,12 @@ class GameScreenController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateScore()
+        if inboundReset {
+            inboundReset = false
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            updateScore()
+        }
     }
     
     
@@ -104,7 +114,7 @@ class GameScreenController: UIViewController {
     }
     
     @objc func resetScore_sendHome() {
-        var parent = self.navigationController?.viewControllers[0] as! StartScreenController
+        let parent = self.navigationController?.viewControllers[0] as! StartScreenController
         parent.best_stored_score = stats.best_streak
         self.navigationController?.popViewController(animated: true)
     }

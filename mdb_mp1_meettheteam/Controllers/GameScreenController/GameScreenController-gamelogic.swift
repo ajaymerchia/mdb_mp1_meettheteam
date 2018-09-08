@@ -10,17 +10,32 @@ import UIKit
 
 
 extension GameScreenController {
+    
+    
+    
     @objc func new_question() {
         curr_round = RoundGenerator()
         promptImage.image = curr_round.promptImage
         
-        for i in 0..<4 {
-            optionButtons[i].setTitle(curr_round.list_of_names[i], for: .normal)
-            optionButtons[i].backgroundColor = StyleColors.BLUE
-        }
+        reset_button_colors()
         accepting_input = true
         time_left_in_round = 5
         start_timer()
+    }
+    
+    func reset_button_colors() {
+        for i in 0..<4 {
+            optionButtons[i].setTitle(curr_round.list_of_names[i], for: .normal)
+            optionButtons[i].setTitleColor(StyleColors.BLUE, for: .normal)
+        }
+        
+    }
+    
+    func mask_data() {
+        promptImage.image = UIImage(named: "questionman_white")
+        for i in 0..<4 {
+            optionButtons[i].setTitle("", for: .normal)
+        }
     }
     
     func start_timer(){
@@ -53,6 +68,7 @@ extension GameScreenController {
     }
     
     func success() {
+        countDown.text = get_happy_emoji()
         stats.score = stats.score + 1
         stats.streak_active = true
         stats.streak = stats.streak + 1
@@ -66,16 +82,20 @@ extension GameScreenController {
         return SAD_EMOJIS[Int(arc4random_uniform(UInt32(SAD_EMOJIS.count)))]
     }
     
+    func get_happy_emoji() -> String {
+        return HAPPY_EMOJIS[Int(arc4random_uniform(UInt32(HAPPY_EMOJIS.count)))]
+    }
+    
     func updateScore(){
         scoreValue.text = "\(stats.score)"
     }
     
     func show_answer(harsh: Bool = false) {
-        optionButtons[curr_round.indexOfCorrect].backgroundColor = StyleColors.GREEN
+        optionButtons[curr_round.indexOfCorrect].setTitleColor(StyleColors.GREEN, for: .normal)
         if harsh {
             for i in 0..<4 {
                 if i != curr_round.indexOfCorrect {
-                    optionButtons[i].backgroundColor = StyleColors.RED
+                    optionButtons[i].setTitleColor(StyleColors.RED, for: .normal)
                 }
             }
         }
@@ -89,7 +109,7 @@ extension GameScreenController {
         accepting_input = false
         show_answer()
         if sender.tag != curr_round.indexOfCorrect {
-            optionButtons[sender.tag].backgroundColor = StyleColors.RED
+            sender.setTitleColor(StyleColors.RED, for: .normal)
             failed()
         } else {
             success()
@@ -103,12 +123,14 @@ extension GameScreenController {
     func prepare_for_next_question(attempt: String){
         stats.last3.enqueue(StatsTracker.RoundResult(img: promptImage.image!, guess: attempt, answer: curr_round.correctName))
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new_question), userInfo: nil, repeats: false)
+        next_round_timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(new_question), userInfo: nil, repeats: false)
     }
     
     func pause_game() {
         stopButton.setTitle("Resume", for: .normal)
         gameTimer.invalidate()
+        next_round_timer?.invalidate()
+        reset_button_colors()
         failed()
         accepting_input = false
         mask_data()
@@ -119,12 +141,7 @@ extension GameScreenController {
         
     }
     
-    func mask_data() {
-        promptImage.image = UIImage(named: "questionman_blue")
-        for i in 0..<4 {
-            optionButtons[i].setTitle("", for: .normal)
-        }
-    }
+   
     
     func resume_game() {
         stopButton.setTitle("Pause", for: .normal)
@@ -140,11 +157,8 @@ extension GameScreenController {
             UIView.animate(withDuration: 0.5, animations: {() -> Void in
                 self.newGame.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.stopButton.transform = CGAffineTransform(translationX: 0, y: 0)
-                Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.removeNewGame), userInfo: nil, repeats: false)
             })
         } else {
-            view.addSubview(newGame)
-            view.sendSubview(toBack: newGame)
             UIView.animate(withDuration: 0.5, animations: {() -> Void in
                 self.newGame.transform = CGAffineTransform(translationX: 125, y: 0)
                 self.stopButton.transform = CGAffineTransform(translationX: -125, y: 0)
@@ -152,9 +166,5 @@ extension GameScreenController {
         }
     }
     
-    @objc func removeNewGame() {
-        self.newGame.removeFromSuperview()
-
-    }
 
 }

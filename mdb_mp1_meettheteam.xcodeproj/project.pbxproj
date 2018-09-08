@@ -24,6 +24,12 @@
 		B750EB1B21432418005D923B /* GameScreenController-gamelogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */; };
 		B750EB1D214347C8005D923B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1C214347C8005D923B /* Queue.swift */; };
 		B750EB23214381A9005D923B /* StatsViewController-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB22214381A9005D923B /* StatsViewController-initUI.swift */; };
+		B750EB2A21445C85005D923B /* Gentona Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2421445C81005D923B /* Gentona Book.otf */; };
+		B750EB2B21445C85005D923B /* Gentona Book Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2521445C82005D923B /* Gentona Book Bold.otf */; };
+		B750EB2C21445C85005D923B /* Naughty Squirrel Shadowed Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2621445C83005D923B /* Naughty Squirrel Shadowed Demo.otf */; };
+		B750EB2D21445C85005D923B /* Naughty Squirrel Striped Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2721445C83005D923B /* Naughty Squirrel Striped Demo.otf */; };
+		B750EB2E21445C85005D923B /* Naughty Squirrel Demo.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2821445C84005D923B /* Naughty Squirrel Demo.otf */; };
+		B750EB2F21445C85005D923B /* Gentona Book Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B750EB2921445C84005D923B /* Gentona Book Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,12 @@
 		B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenController-gamelogic.swift"; sourceTree = "<group>"; };
 		B750EB1C214347C8005D923B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		B750EB22214381A9005D923B /* StatsViewController-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsViewController-initUI.swift"; sourceTree = "<group>"; };
+		B750EB2421445C81005D923B /* Gentona Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book.otf"; sourceTree = "<group>"; };
+		B750EB2521445C82005D923B /* Gentona Book Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book Bold.otf"; sourceTree = "<group>"; };
+		B750EB2621445C83005D923B /* Naughty Squirrel Shadowed Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Naughty Squirrel Shadowed Demo.otf"; sourceTree = "<group>"; };
+		B750EB2721445C83005D923B /* Naughty Squirrel Striped Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Naughty Squirrel Striped Demo.otf"; sourceTree = "<group>"; };
+		B750EB2821445C84005D923B /* Naughty Squirrel Demo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Naughty Squirrel Demo.otf"; sourceTree = "<group>"; };
+		B750EB2921445C84005D923B /* Gentona Book Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gentona Book Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 				B750EB04214290F6005D923B /* Resources */,
 				B750EAD721428820005D923B /* Main.storyboard */,
 				B750EADA21428822005D923B /* Assets.xcassets */,
+				B750EB3021445C8A005D923B /* Fonts */,
 				B750EADC21428822005D923B /* LaunchScreen.storyboard */,
 				B750EADF21428822005D923B /* Info.plist */,
 			);
@@ -201,6 +214,19 @@
 				B750EB22214381A9005D923B /* StatsViewController-initUI.swift */,
 			);
 			path = StatsViewController;
+			sourceTree = "<group>";
+		};
+		B750EB3021445C8A005D923B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B750EB2521445C82005D923B /* Gentona Book Bold.otf */,
+				B750EB2921445C84005D923B /* Gentona Book Italic.otf */,
+				B750EB2421445C81005D923B /* Gentona Book.otf */,
+				B750EB2821445C84005D923B /* Naughty Squirrel Demo.otf */,
+				B750EB2621445C83005D923B /* Naughty Squirrel Shadowed Demo.otf */,
+				B750EB2721445C83005D923B /* Naughty Squirrel Striped Demo.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +335,13 @@
 			files = (
 				B750EADE21428822005D923B /* LaunchScreen.storyboard in Resources */,
 				B750EADB21428822005D923B /* Assets.xcassets in Resources */,
+				B750EB2C21445C85005D923B /* Naughty Squirrel Shadowed Demo.otf in Resources */,
+				B750EB2A21445C85005D923B /* Gentona Book.otf in Resources */,
+				B750EB2E21445C85005D923B /* Naughty Squirrel Demo.otf in Resources */,
+				B750EB2B21445C85005D923B /* Gentona Book Bold.otf in Resources */,
 				B750EAD921428820005D923B /* Main.storyboard in Resources */,
+				B750EB2D21445C85005D923B /* Naughty Squirrel Striped Demo.otf in Resources */,
+				B750EB2F21445C85005D923B /* Gentona Book Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

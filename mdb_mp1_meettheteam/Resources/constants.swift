@@ -41,12 +41,23 @@ class Constants {
     }
 }
 
+class Defaults {
+    static func addBackgroundImage(given_view: UIView) {
+        let backgroundImage = UIImageView(frame: CGRect(x: 0, y: 0, width: given_view.frame.width, height: given_view.frame.height))
+        backgroundImage.image = UIImage(named: "randomqs.jpg")
+        given_view.insertSubview(backgroundImage, at: 0)
+    }
+}
 
 
 class StyleColors {
-    static let RED = rgba(255,0,0,1)
-    static let GREEN = rgba(0,255,0,1)
-    static let BLUE = rgba(0,0,255,1)
+    static let LIGHT_RED = rgba(255,168,168,1)
+    static let LIGHT_GREEN = rgba(168,255,168,1)
+    
+    
+    static let RED = rgba(239,47,47,1)
+    static let GREEN = rgba(48,191,28,1)
+    static let BLUE = rgba(89,187,247,1)
 
     
     static func rgba(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat) -> UIColor {

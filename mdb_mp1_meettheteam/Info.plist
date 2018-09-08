@@ -41,5 +41,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gentona Book Bold.otf</string>
+		<string>Gentona Book Italic.otf</string>
+		<string>Gentona Book.otf</string>
+		<string>Naughty Squirrel Demo.otf</string>
+		<string>Naughty Squirrel Shadowed Demo.otf</string>
+		<string>Naughty Squirrel Striped Demo.otf</string>
+	</array>
 </dict>
 </plist>

@@ -14,11 +14,13 @@ class StartScreenController: UIViewController {
     var logo_image_view2: UIImageView!
     
     var app_title: UILabel!
+    var app_title2: UILabel!
     
     var startButton: UIButton!
     
     var best_stored_score: Int = 0
-
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
@@ -30,10 +32,11 @@ class StartScreenController: UIViewController {
         init_images()
         init_text()
         init_buttons()
-//        view.backgroundColor = UIColor.cyan
         startButton.addTarget(self, action: #selector(transfer_to_gamecontroller), for: .touchUpInside)
 
+        Defaults.addBackgroundImage(given_view: self.view)
         
+
     }
 
     override func didReceiveMemoryWarning() {
