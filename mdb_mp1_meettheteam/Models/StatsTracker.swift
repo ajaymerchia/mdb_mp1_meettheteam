@@ -19,6 +19,7 @@ class StatsTracker{
     struct STATS {
         var score: Int = 0
         var streak: Int = 0
+        var best_streak: Int = 0
         var streak_active:Bool = true
         var last3 = SizedQueue<RoundResult>(size: 3)
     }

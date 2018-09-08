@@ -23,6 +23,7 @@
 		B750EB14214316A9005D923B /* RoundGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB13214316A9005D923B /* RoundGenerator.swift */; };
 		B750EB1B21432418005D923B /* GameScreenController-gamelogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */; };
 		B750EB1D214347C8005D923B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB1C214347C8005D923B /* Queue.swift */; };
+		B750EB23214381A9005D923B /* StatsViewController-initUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750EB22214381A9005D923B /* StatsViewController-initUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B750EB13214316A9005D923B /* RoundGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundGenerator.swift; sourceTree = "<group>"; };
 		B750EB1A21432418005D923B /* GameScreenController-gamelogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenController-gamelogic.swift"; sourceTree = "<group>"; };
 		B750EB1C214347C8005D923B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		B750EB22214381A9005D923B /* StatsViewController-initUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsViewController-initUI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				B750EB0E214313D5005D923B /* StatsViewController.swift */,
+				B750EB22214381A9005D923B /* StatsViewController-initUI.swift */,
 			);
 			path = StatsViewController;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				B750EAD621428820005D923B /* StartScreenController.swift in Sources */,
 				B750EB14214316A9005D923B /* RoundGenerator.swift in Sources */,
 				B750EB1D214347C8005D923B /* Queue.swift in Sources */,
+				B750EB23214381A9005D923B /* StatsViewController-initUI.swift in Sources */,
 				B750EAD421428820005D923B /* AppDelegate.swift in Sources */,
 				B750EB0A2142E679005D923B /* GameScreenController.swift in Sources */,
 				B750EB0D2142E7C2005D923B /* GameScreenController-initUI.swift in Sources */,

@@ -15,7 +15,8 @@ extension GameScreenController {
         promptImage = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width/2, height: view.frame.width/2))
         promptImage.center = CGPoint(x: view.frame.width/2, y: view.frame.height/3)
         promptImage.image = UIImage(named: "questionman_blue")
-        promptImage.contentMode = .scaleAspectFit
+        promptImage.contentMode = .scaleAspectFill
+        promptImage.clipsToBounds = true
         view.addSubview(promptImage)
         
     }
@@ -52,12 +53,16 @@ extension GameScreenController {
         view.addSubview(linkToStats)
         
         
-        stopButton = UIButton(frame: CGRect(x: view.frame.width/4, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
+        stopButton = UIButton(frame: CGRect(x: view.frame.width/4.2, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
         stopButton.setTitle("Pause", for: .normal)
         stopButton.backgroundColor = .blue
         stopButton.layer.cornerRadius = 20
         view.addSubview(stopButton)
         
+        newGame = UIButton(frame: CGRect(x: view.frame.width/4.2, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
+        newGame.setTitle("New Game", for: .normal)
+        newGame.backgroundColor = .green
+        newGame.layer.cornerRadius = 20
         
         let BUTTON_WIDTH:Int = Int(view.frame.width)*4/10
         let BUTTON_HEIGHT:Int = 50

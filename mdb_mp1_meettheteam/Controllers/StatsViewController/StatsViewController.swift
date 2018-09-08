@@ -12,39 +12,40 @@ class StatsViewController: UIViewController {
     
     var statistics: StatsTracker.STATS!
     
+    var bestStreak_title: UILabel!
+    var bestStreak_value: UILabel!
+    
+    var recentAttemptsHeader: UILabel!
+    
+    var recentAttemptsPhotos: [UIImageView] = []
+    var recentAttemptsNames: [UILabel] = []
+    var recentAttemptsGuesses: [UILabel] = []
+    
+    var resetStats: UIButton!
+    var returnToGame: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var app_title: UILabel
-        app_title = UILabel(frame: CGRect(x: 0, y: view.frame.height*1/2, width: view.frame.width, height: 100))
-        app_title.text = "Streak: \(statistics.streak)"
-        app_title.textAlignment = .center
-        view.addSubview(app_title)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        init_labels()
+        init_buttons()
+        create_question_history()
+        
+        returnToGame.addTarget(self, action: #selector(return_to_target), for: .touchUpInside)
+        
+        resetStats.addTarget(self, action: #selector(reset), for: .touchUpInside)
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
+    @objc func return_to_target(){
+        self.navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
+    @objc func reset() {
+        var parent = self.navigationController?.viewControllers[1] as! GameScreenController
+        parent.stats = StatsTracker.STATS()
+        return_to_target()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -54,4 +54,8 @@ public struct SizedQueue<T> {
             return array[head]
         }
     }
+    
+    public func peek(_ index: Int) -> T? {
+        return array[head+index]
+    }
 }

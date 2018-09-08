@@ -16,6 +16,8 @@ class StartScreenController: UIViewController {
     var app_title: UILabel!
     
     var startButton: UIButton!
+    
+    var best_stored_score: Int = 0
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +43,11 @@ class StartScreenController: UIViewController {
     
     @objc func transfer_to_gamecontroller() {
         performSegue(withIdentifier: "toGame", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let gameVC = segue.destination as! GameScreenController
+        gameVC.preload_value = best_stored_score
     }
     
 

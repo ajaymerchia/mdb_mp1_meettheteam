@@ -15,20 +15,21 @@ class GameScreenController: UIViewController {
         case STOPPED
     }
     
-    
-    
     var linkToStats: UIButton!
     
     var countDown: UILabel!
     var scoreLabel: UILabel!
     var scoreValue: UILabel!
     
-    var stats = StatsTracker.STATS()
+    var stats: StatsTracker.STATS!
+    var preload_value: Int!
     
     var promptImage: UIImageView!
     var promptText: UILabel!
     
     var stopButton: UIButton!
+    var newGame: UIButton!
+    
     var optionButtons : [UIButton] = []
     
     var curr_state = GAME_STATE.RUNNING
@@ -58,6 +59,11 @@ class GameScreenController: UIViewController {
         }
         
         stopButton.addTarget(self, action: #selector(state_button_handler), for: .touchUpInside)
+        newGame.addTarget(self, action: #selector(resetScore_sendHome), for: .touchUpInside)
+        
+        //Initialize Game Values
+        stats = StatsTracker.STATS()
+        stats.best_streak = preload_value
         
         //Start the game if it isn't in pause mode
         if curr_state == GAME_STATE.RUNNING {
@@ -75,10 +81,14 @@ class GameScreenController: UIViewController {
         pause_game()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateScore()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultVC = segue.destination as! StatsViewController
-        resultVC.statistics = stats
+        let statsVC = segue.destination as! StatsViewController
+        statsVC.statistics = stats
     }
 
     @objc func transfer_to_stats(){
@@ -91,6 +101,12 @@ class GameScreenController: UIViewController {
         } else {
             pause_game()
         }
+    }
+    
+    @objc func resetScore_sendHome() {
+        var parent = self.navigationController?.viewControllers[0] as! StartScreenController
+        parent.best_stored_score = stats.best_streak
+        self.navigationController?.popViewController(animated: true)
     }
     
     

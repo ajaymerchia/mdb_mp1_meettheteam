@@ -55,9 +55,11 @@ extension GameScreenController {
     func success() {
         stats.score = stats.score + 1
         stats.streak_active = true
-        if stats.streak_active {
-            stats.streak = stats.streak + 1
+        stats.streak = stats.streak + 1
+        if stats.streak > stats.best_streak {
+            stats.best_streak = stats.streak
         }
+        
     }
     
     func get_sad_emoji() -> String {
@@ -113,6 +115,8 @@ extension GameScreenController {
         time_left_in_round = 5
         updateClock()
         curr_state = GAME_STATE.STOPPED
+        show_hide_new(false)
+        
     }
     
     func mask_data() {
@@ -128,6 +132,29 @@ extension GameScreenController {
         accepting_input = false
         curr_state = GAME_STATE.RUNNING
         new_question()
+        show_hide_new(true)
+    }
+    
+    func show_hide_new(_ hideNewGame: Bool) {
+        if hideNewGame {
+            UIView.animate(withDuration: 0.5, animations: {() -> Void in
+                self.newGame.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.stopButton.transform = CGAffineTransform(translationX: 0, y: 0)
+                Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.removeNewGame), userInfo: nil, repeats: false)
+            })
+        } else {
+            view.addSubview(newGame)
+            view.sendSubview(toBack: newGame)
+            UIView.animate(withDuration: 0.5, animations: {() -> Void in
+                self.newGame.transform = CGAffineTransform(translationX: 125, y: 0)
+                self.stopButton.transform = CGAffineTransform(translationX: -125, y: 0)
+            })
+        }
+    }
+    
+    @objc func removeNewGame() {
+        self.newGame.removeFromSuperview()
+
     }
 
 }
