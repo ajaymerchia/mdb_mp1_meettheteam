@@ -131,7 +131,7 @@ extension GameScreenController {
         gameTimer.invalidate()
         next_round_timer?.invalidate()
         reset_button_colors()
-        failed()
+//        failed()
         accepting_input = false
         mask_data()
         time_left_in_round = 5
