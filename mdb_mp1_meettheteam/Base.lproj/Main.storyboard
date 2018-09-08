@@ -55,7 +55,9 @@
                         <viewLayoutGuide key="safeArea" id="hbN-XI-oUT"/>
                     </view>
                     <connections>
-                        <segue destination="yy6-QX-x75" kind="show" identifier="toStats" id="FSy-qe-Afg"/>
+                        <segue destination="yy6-QX-x75" kind="popoverPresentation" identifier="toStats" popoverAnchorView="4BT-ig-ARh" id="FSy-qe-Afg">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoZ-yb-smV" userLabel="First Responder" sceneMemberID="firstResponder"/>

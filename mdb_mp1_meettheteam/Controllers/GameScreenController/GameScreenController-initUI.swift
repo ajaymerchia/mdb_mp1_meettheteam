@@ -15,10 +15,8 @@ extension GameScreenController {
         promptImage = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width/2, height: view.frame.width/2))
         promptImage.center = CGPoint(x: view.frame.width/2, y: view.frame.height/3)
         promptImage.image = UIImage(named: "questionman_blue")
-        promptImage.contentMode = .scaleAspectFill
+        promptImage.contentMode = .scaleAspectFit
         view.addSubview(promptImage)
-        
-        
         
     }
     
@@ -40,9 +38,10 @@ extension GameScreenController {
         scoreValue.textAlignment = .center
         view.addSubview(scoreValue)
         
-        countDown  = UILabel(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 50))
+        countDown  = UILabel(frame: CGRect(x: 0, y: 70, width: view.frame.width, height: 50))
         countDown.text = "5"
         countDown.textAlignment = .center
+        countDown.font = UIFont(name: "Arial", size: 60)
         view.addSubview(countDown)
     }
     
@@ -54,7 +53,7 @@ extension GameScreenController {
         
         
         stopButton = UIButton(frame: CGRect(x: view.frame.width/4, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
-        stopButton.setTitle("Stop", for: .normal)
+        stopButton.setTitle("Pause", for: .normal)
         stopButton.backgroundColor = .blue
         stopButton.layer.cornerRadius = 20
         view.addSubview(stopButton)
@@ -67,10 +66,8 @@ extension GameScreenController {
             let r:Int = (i/2)
             let c:Int = i%2
             
-            
             //Reserve 1/3 of horizontal space for margins, gutter = .5/10, button = 4/10, divider = 1/10, button = 4/10, gutter=.5/10
             let x_frac:Double = 0.5/10 + Double(c) * 0.5
-            
             
             let x_co:Int = Int(x_frac * Double(view.frame.width))
             let y_co:Int = Int(view.frame.height) - 100*(3-r)

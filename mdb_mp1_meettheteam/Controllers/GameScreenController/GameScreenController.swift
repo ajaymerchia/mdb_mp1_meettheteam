@@ -15,12 +15,15 @@ class GameScreenController: UIViewController {
         case STOPPED
     }
     
+    
+    
     var linkToStats: UIButton!
     
     var countDown: UILabel!
     var scoreLabel: UILabel!
     var scoreValue: UILabel!
-    var score: Int!
+    
+    var stats = StatsTracker.STATS()
     
     var promptImage: UIImageView!
     var promptText: UILabel!
@@ -29,7 +32,14 @@ class GameScreenController: UIViewController {
     var optionButtons : [UIButton] = []
     
     var curr_state = GAME_STATE.RUNNING
+    var accepting_input:Bool = true
+    var gameTimer: Timer!
+    var time_left_in_round: Double = 5.0
+    let TIMER_PRECISION = 0.01
+    
     var curr_round: RoundGenerator!
+    
+    let SAD_EMOJIS = ["💥","😢","🤯","❌"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +57,12 @@ class GameScreenController: UIViewController {
             button.addTarget(self, action: #selector(process_answer), for: .touchUpInside)
         }
         
+        stopButton.addTarget(self, action: #selector(state_button_handler), for: .touchUpInside)
+        
         //Start the game if it isn't in pause mode
         if curr_state == GAME_STATE.RUNNING {
             new_question()
-            start_timer()
         }
-        
     }
     
 
@@ -61,9 +71,28 @@ class GameScreenController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        pause_game()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultVC = segue.destination as! StatsViewController
+        resultVC.statistics = stats
+    }
+
     @objc func transfer_to_stats(){
         performSegue(withIdentifier: "toStats", sender: self)
     }
+    
+    @objc func state_button_handler() {
+        if curr_state == .STOPPED {
+            resume_game()
+        } else {
+            pause_game()
+        }
+    }
+    
     
     
     
