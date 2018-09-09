@@ -5,7 +5,8 @@ This is my first iOS application. It displays the members of MDB for Fall 2018 a
 
 ## Screenshots
 | <img src="screenshots/home.png" width="200">        | <img src="screenshots/gameplay.png" width="200">           | <img src="screenshots/stats.png" width="200">  |
-| Welcome to Meet the Members | Identify members of MBD | Track statistics! |
+| :-------------: | :-------------: | :-------------: |
+| Welcome to Meet the Members | Identify members of MBD | Track statistics |
 
 ## Acknowledgements
 * Adapted Queue Data Structure [\(Swift Algorithm Club\)](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Queue/)
