@@ -22,32 +22,39 @@ class StartScreenController: UIViewController {
     
     
     
+    
+    /// Hide Navigation Controller to allow for more aesthetic UI components
+    ///
+    /// - Parameter animated: determines whether or not the viewappearance should be animated (not used)
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
     }
     
+    /// Adds background image, foreground images, text, buttons, and links buttons
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Adds background image
+        Defaults.addBackgroundImage(given_view: self.view)
+
         // Do any additional setup after loading the view, typically from a nib.
         init_images()
         init_text()
         init_buttons()
+        
+        // Link Start Button to push a new Game Controller to the NavController
         startButton.addTarget(self, action: #selector(transfer_to_gamecontroller), for: .touchUpInside)
 
-        Defaults.addBackgroundImage(given_view: self.view)
         
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    // Adds the GameScreen Controller to the Navigation Controller
     @objc func transfer_to_gamecontroller() {
         performSegue(withIdentifier: "toGame", sender: self)
     }
     
+    // Informs the new GameScreenController of a stats score to preload.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let gameVC = segue.destination as! GameScreenController
         gameVC.preload_value = best_stored_score

@@ -10,6 +10,8 @@ import UIKit
 
 extension GameScreenController {
     
+    
+    /// Creates the UI Components that are images
     func init_images(){
         //Initialize the main image
         imageFrame = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width/2+30, height: view.frame.width/2 + 30))
@@ -28,6 +30,7 @@ extension GameScreenController {
         
     }
     
+    /// Creates the UI Components that are text
     func init_text(){
         //Initialize the Help Text (Instructions on what to do)
         promptText = UILabel(frame: CGRect(x: 0, y: view.frame.height*19/40, width: view.frame.width, height: 100))
@@ -54,6 +57,7 @@ extension GameScreenController {
 
         view.addSubview(scoreValue)
         
+        // Show the countdown
         countDown  = UILabel(frame: CGRect(x: 0, y: 70, width: view.frame.width, height: 50))
         countDown.text = "5"
         countDown.textAlignment = .center
@@ -63,13 +67,14 @@ extension GameScreenController {
         view.addSubview(countDown)
     }
     
+    /// Creates the UI Components that are buttons
     func init_buttons(){
-        
+        // Outbound button to the StatsViewController
         linkToStats = UIButton(frame: CGRect(x: 20, y: 40, width: 40, height: 40))
         linkToStats.setImage(UIImage(named: "bar-chart-white"), for: UIControlState.normal)
         view.addSubview(linkToStats)
         
-        
+        // Game pause button
         stopButton = UIButton(frame: CGRect(x: view.frame.width/4.2, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
         stopButton.setTitle("Pause", for: .normal)
         stopButton.backgroundColor = .white
@@ -78,6 +83,7 @@ extension GameScreenController {
         stopButton.layer.cornerRadius = 10
         view.addSubview(stopButton)
         
+        //New Game Button
         newGame = UIButton(frame: CGRect(x: view.frame.width/4.2, y: view.frame.height - 80, width: view.frame.width / 2, height: 50))
         newGame.setTitle("New Game", for: .normal)
         newGame.titleLabel?.font = UIFont(name: "Gentona-Bold", size: 30)
@@ -87,6 +93,7 @@ extension GameScreenController {
         view.insertSubview(newGame, at: 1)
 
         
+        // Create the UI Buttons
         let BUTTON_WIDTH:Int = Int(view.frame.width)*4/10
         let BUTTON_HEIGHT:Int = 50
         

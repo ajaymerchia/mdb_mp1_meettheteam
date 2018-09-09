@@ -10,6 +10,8 @@ import UIKit
 
 extension StatsViewController {
     
+    
+    /// Creates the best streak labels and the header for the recent attempts section
     func init_labels() {
         bestStreak_title = UILabel(frame: CGRect(x: 0, y: 40, width: view.frame.width, height: 100))
         bestStreak_title.text = "Best Streak"
@@ -34,6 +36,8 @@ extension StatsViewController {
         
     }
     
+    
+    /// Creates the reset statistics buttons
     func init_buttons() {
         returnToGame = UIButton(frame: CGRect(x: 20, y: 40, width: 20, height: 20))
         returnToGame.setImage(UIImage(named: "left-arrow"), for: UIControlState.normal)
@@ -48,6 +52,8 @@ extension StatsViewController {
         view.addSubview(resetStats)
     }
     
+    
+    /// Dynamically creates previous questions and answers based on how many there are. Displays image, answer, and guess, all stored in StatsTracker.RoundResult
     func create_question_history() {
         let questions = statistics.last3
         
@@ -100,11 +106,6 @@ extension StatsViewController {
                 view.addSubview(curr_guess_obj)
 
             }
-            
-           
-            
-            
-            
         }
     }
     

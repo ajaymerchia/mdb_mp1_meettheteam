@@ -10,4 +10,5 @@ This is my first iOS application. It displays the members of MDB for Fall 2018 a
 
 ## Acknowledgements
 * Adapted Queue Data Structure [\(Swift Algorithm Club\)](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Queue/)
+* Font Bolding and Italicizing [\(Stack Overflow\)](https://stackoverflow.com/questions/4713236/how-do-i-set-bold-and-italic-on-uilabel-of-iphone-ipad)
 * MDB iOS Instructors/Mentors Max Miranda, Will Oakley, Shubham Gupta

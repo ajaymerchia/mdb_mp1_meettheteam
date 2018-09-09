@@ -26,6 +26,7 @@ class StatsViewController: UIViewController {
     
     
     
+    /// Adds background image, best streak, and the last 3 questions to the view.
     override func viewDidLoad() {
         super.viewDidLoad()
         Defaults.addBackgroundImage(given_view: self.view)
@@ -34,15 +35,18 @@ class StatsViewController: UIViewController {
         create_question_history()
         
         returnToGame.addTarget(self, action: #selector(return_to_target), for: .touchUpInside)
-        
         resetStats.addTarget(self, action: #selector(reset), for: .touchUpInside)
         
     }
     
+    
+    /// Returns to the previous view controller
     @objc func return_to_target(){
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    /// Resets all statistics and returns to the home screen
     @objc func reset() {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
         

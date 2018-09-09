@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+/// Generates the random values used in a round.
 class RoundGenerator{
     var promptImage: UIImage
     var correctName: String
@@ -19,6 +21,8 @@ class RoundGenerator{
         return Constants.names.index(of: name)!
     }
     
+    
+    /// Initializes instances variables including the prompt image, the options, and the correct answer
     init(){
         var random_options_selected = Set<Int>()
         let SIZE_OF_MDB = UInt32(Constants.names.count)

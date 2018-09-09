@@ -9,6 +9,9 @@
 import UIKit
 
 extension StartScreenController {
+    
+    
+    /// Initializes text components (app title)
     func init_text(){
         app_title = UILabel(frame: CGRect(x: 0, y: view.frame.height*0.6, width: view.frame.width, height: 150))
         app_title.text = "Meet The Members"
@@ -21,6 +24,8 @@ extension StartScreenController {
 
     }
     
+    
+    /// Initializes and centers MDB app photo
     func init_images(){
         logo_image_view = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width/3, height: view.frame.height/5))
         
@@ -34,12 +39,10 @@ extension StartScreenController {
         logo_image_view.image = UIImage(named: "mdb_logo_white")
         logo_image_view.contentMode = .scaleAspectFill
         view.addSubview(logo_image_view)
-        
-        
-        
-        
     }
     
+    
+    /// Initializes the start button view
     func init_buttons(){
         startButton = UIButton(frame: CGRect(x: view.frame.width/4, y: view.frame.height - 110, width: view.frame.width / 2, height: 50))
         startButton.setTitle("Get Started!", for: .normal)

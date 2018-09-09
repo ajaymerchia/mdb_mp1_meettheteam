@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 
 class StatsTracker{
+    
+    /// Stores the results of a round including the image shown, the answer, and the user's guess
     struct RoundResult {
         var img: UIImage
         var guess: String
         var answer: String
     }
     
+    
+    /// Stores data used to create/construct the StatsViewController
     struct STATS {
         var score: Int = 0
         var streak: Int = 0
