@@ -45,6 +45,10 @@ class StatsViewController: UIViewController {
     
     @objc func reset() {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        
+        let target_VC = viewControllers[0] as! StartScreenController
+        target_VC.best_stored_score = 0
+        
         self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
 
